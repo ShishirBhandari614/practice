@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'updare.css' %}">
+    <title>Modern Login Page | AsmrProg</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form method = "POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="https://myaccount.google.com/" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="https://www.facebook.com" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://github.com/login" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/login" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                <input type="text" name= "name" placeholder="Name">
+                <input type="email" name = "email" placeholder="Email">
+                <input type="password" name = "password" placeholder="Password">
+                <input type="file" name = "image" placeholder="Password">
+                <button type="submit">sign up</button>
+                <a href="/view/" target="_blank">
+                   <button type="button">View</button>
+                </a>
+
+
+            </form>
+        </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+</html>

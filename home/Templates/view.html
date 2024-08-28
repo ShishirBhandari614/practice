@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'view.css' %}">
+    <title>Modern Login Page | AsmrProg</title>
+</head>
+
+<body>
+
+<table class="container">
+  <tr>
+      <th>S.N.</th>
+    <th>name</th>
+    <th>email</th>
+    <th>password</th>
+    <th>image</th>
+      <th>action</th>
+  </tr>
+  {%for forms in form %}
+      <tr>
+          <td>{{forloop.counter}}</td>
+         <td>{{forms.name}}</td>
+         <td>{{forms.email}}</td>
+         <td>{{forms.password}}</td>
+         <td>
+             <img src="/media/{{forms.image}}"></td>
+          <td><a href="/delete_data/{{forms.id}}">
+              <button type="button">delete</button>
+
+
+          </a>
+          <a href="/update_data/{{forms.id}}">
+              <button type="button">update</button>
+          </a></td>
+
+          {% endfor %}
+      </tr>
+</body>
+</html>
